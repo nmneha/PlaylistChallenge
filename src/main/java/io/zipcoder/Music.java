@@ -9,6 +9,17 @@ public class Music {
     }
 
     public Integer selection(Integer startIndex, String selection){
-        return null;
+        int clicks = 0;
+        for (int i = 0; i < playList.length; i++) {
+            if (selection == playList[i]) {
+                if (i > startIndex) {
+                   clicks = i- startIndex;
+                } else {
+                    clicks = startIndex - i;
+                }
+            }
+        }
+
+        return clicks;
     }
 }
