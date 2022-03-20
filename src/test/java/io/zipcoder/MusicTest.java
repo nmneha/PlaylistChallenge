@@ -33,11 +33,11 @@ public class MusicTest {
     @Test
     public void selectionTest3(){
 
-        String[] playlist = {"hello","goodbye","tomorrow","yesterday", "yesterday", "time"};
+        String[] playlist = {"hello","yesterday","tomorrow","yesterday", "yesterday", "time"};
         Music music = new Music(playlist);
         Integer startingIndex = 0;
         String selection = "yesterday";
-        Integer expected = 2;
+        Integer expected = 1;
         Integer actual = music.selection(startingIndex, selection);
         Assert.assertEquals(expected, actual);
     }
