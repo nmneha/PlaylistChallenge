@@ -12,9 +12,9 @@ public class Music {
     }
 
     public Integer selection(Integer startIndex, String selection) {
-        int up = 0;
-        int down = 0;
-        int loopClick = 0;
+        int up;
+        int down;
+        int loopClick;
         TreeSet<Integer> clicks = new TreeSet();
         for (int i = 0; i < playList.length; i++) {
             if (selection.equals(playList[i])) {
