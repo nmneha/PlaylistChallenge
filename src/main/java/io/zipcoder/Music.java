@@ -16,7 +16,6 @@ public class Music {
         int down = 0;
         int loopClick = 0;
         TreeSet<Integer> clicks = new TreeSet();
-        //checking for clicks without looping around playlist
         for (int i = 0; i < playList.length; i++) {
             if (selection.equals(playList[i])) {
                 if (i > startIndex) {
