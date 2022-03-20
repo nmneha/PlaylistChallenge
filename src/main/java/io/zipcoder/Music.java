@@ -8,18 +8,26 @@ public class Music {
         this.playList = playList;
     }
 
-    public Integer selection(Integer startIndex, String selection){
-        int clicks = 0;
+    public Integer selection(Integer startIndex, String selection) {
+        int up = 0;
+        int down = 0;
+        int loopClick = 0;
+        //checking for clicks without looping around playlist
         for (int i = 0; i < playList.length; i++) {
-            if (selection == playList[i]) {
+            if (selection.equals(playList[i])) {
                 if (i > startIndex) {
-                   clicks = i- startIndex;
-                } else {
-                    clicks = startIndex - i;
+                    down = i - startIndex;
+                } else if (i < startIndex) {
+                    up = startIndex - i;
                 }
+                loopClick = (startIndex) + ((playList.length) - i);
             }
         }
-
-        return clicks;
+        if (up == loopClick) {
+            return up;
+        } else if (down == loopClick) {
+            return down;
+        }
+        return loopClick;
     }
 }
